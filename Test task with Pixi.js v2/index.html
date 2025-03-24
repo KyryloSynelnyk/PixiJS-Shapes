@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixiJS Test Task</title>
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+</head>
+<body>
+
+    <div id="main-container">
+        <div id="canvas"></div>
+        <div id="stats">
+            <div>
+                Number of Current Shapes: <span id="shapeCount">0</span>
+                <span class="separator"></span>
+                Surface Area Occupied: <span id="surfaceArea">0</span> px²
+            </div>
+        </div>
+        <div id="controls">
+            <div id="frequencyControl">
+                <button onclick="app.uiController.decreaseFrequency()">- Frequency</button>
+                <span id="frequencyValue">1</span> shapes/second
+                <button onclick="app.uiController.increaseFrequency()">+ Frequency</button>
+            </div>
+            <div id="gravityControl">
+                <button onclick="app.uiController.decreaseGravity()">- Gravity</button>
+                <span id="gravityValue">1</span>
+                <button onclick="app.uiController.increaseGravity()">+ Gravity</button>
+            </div>
+            <button onclick="app.uiController.resetValues()">Reset Values</button>
+        </div>
+    </div>
+
+    <script src="./libs/pixi.min.js"></script>
+    <script src="./src/models/AppState.js"></script>
+    <script src="./src/models/Shape.js"></script>
+    <script src="./src/models/ImageModel.js"></script>
+    <script src="./src/controllers/ShapeController.js"></script>
+    <script src="./src/views/CanvasView.js"></script>
+    <script src="./src/controllers/UIController.js"></script>
+    <script src="./src/App.js"></script>
+
+    <script>
+        const app = new App();
+        app.start();
+    </script>
+</body>
+</html>
